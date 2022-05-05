@@ -4,7 +4,7 @@ from googletrans import Translator
 from discord.commands import Option
 import os
 from dotenv import load_dotenv
-from ok import languages
+from languages import languages
 
 
 load_dotenv()
