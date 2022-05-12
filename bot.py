@@ -37,6 +37,15 @@ async def translate_command(
 		return await ctx.respond("This language is invalid. Please refer the documentation to find the valid languages.", ephemeral = True)
 	output = translator.translate(text, dest = language)
 	data = output.text
-	await ctx.respond(f"{data}", ephemeral = True)	
+	await ctx.respond(f"{data}", ephemeral = True)
+
+@bot.slash_command(name = "translate",description = "Translate your english message to the preferred languages")
+async def translate_command(
+	ctx,
+	text : Option(str, "The text you wish to translate.")
+):
+	output = translator.translate(text, dest = "en")
+	data = output.text
+	await ctx.respond(f"{data}", ephemeral = True)
 
 bot.run(TOKEN)
