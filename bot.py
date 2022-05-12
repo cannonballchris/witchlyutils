@@ -26,7 +26,7 @@ async def translate_command(self, ctx, message:discord.Message):
 	data = output.text
 	await ctx.respond(f"{data}", ephemeral = True)
 
-@bot.slash_command(name = "translate",description = "Translate your english message to the preferred languages")
+@bot.slash_command(name = "language",description = "Translate your english message to the preferred languages")
 async def translate_command(
 	ctx,
 	lang : Option(str, "The language you wish to translate the message in"),
